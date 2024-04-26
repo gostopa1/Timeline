@@ -67,12 +67,15 @@ function addTimelineEvent(timelineEvent)
     document.body.appendChild(elem);
 }
 
+// Populate the timeline based on the events in the EventList
 EventList.forEach(
     te => 
     {
         addTimelineEvent(te);
     }
 )
+
+// Adding a mouse click listener to toggle visibility on for each element of .popup class
 const myElements = document.querySelectorAll(".popup")
 myElements.forEach(
     el => {
