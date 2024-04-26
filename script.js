@@ -8,7 +8,7 @@ var TimelineEvent = {
     text: "PhD",
     category: 1,
     popupText: "I did this and that",
-    create: function (eventYLocation=1,startingDate, endingDate, eventText = "An Event",eventPopuptext = "This is what happened", eventCategory = 1)
+    create: function (eventYLocation=1,startingDate, endingDate, eventText = "An Event",eventPopuptext = "This is what happened", eventCategory = 0)
     {
       const newTimelineEvent = Object.create(this);
       newTimelineEvent.startingDate = startingDate;
@@ -31,14 +31,15 @@ var EventList =
 [
 TimelineEvent.create(1, 10, 300, "Diploma in Computer Engineering","University of Patras"), 
 TimelineEvent.create(2, 100, 300, "Bachelor in Music Technology","Sibelius Academy"), 
-TimelineEvent.create(3, 50, 400, "PhD in computational Neuroscience","Aalto University"), 
+TimelineEvent.create(3, 50, 400, "PhD in Computational Neuroscience","Aalto University",2), 
 TimelineEvent.create(4, 100, 300,"Military Service", "Vekaranjarvi"),
-TimelineEvent.create(5, 400, 600,"A baby was born", "Filippos", 2),
+TimelineEvent.create(5, 400, 600,"A baby was born", "Filippos", 1),
 ]
 var te1 = TimelineEvent.create(10, 15);
 
 var fullWidth = window.innerWidth;
 var fullHeight = window.innerHeight;
+var colors = ["#73AD21","#73FDAA","#0000FF"];
 
 function addTimelineEvent(timelineEvent)
 {
@@ -47,10 +48,12 @@ function addTimelineEvent(timelineEvent)
     
     elem.setAttribute("id", "rcorners1");
     elem.setAttribute("class", "popup");
-    
+    //elem.style.backgroundColor = "te";
+    elem.style.backgroundColor = colors[timelineEvent.category];
     var popupSpan = document.createElement("span");
     popupSpan.setAttribute("class", "popuptext");
     popupSpan.setAttribute("id", "myPopup");
+    
     
     popupSpan.innerHTML=timelineEvent.popupText;
     
