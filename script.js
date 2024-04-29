@@ -2,6 +2,9 @@
 var fullWidth = window.innerWidth;
 var fullHeight = window.innerHeight;
 
+const root = document.querySelector(":root"); //grabbing the root element
+
+
 var startingDate = "2010-01-01";
 //var endDate = "2024-07-01";
 var endDate = today;
@@ -35,6 +38,9 @@ function addTimelineEvent(timelineEvent)
     elem.setAttribute("id", "rcorners1");
     elem.setAttribute("class", "popup");
     elem.style.backgroundColor = colors[timelineEvent.category];
+    elem.style.setProperty("--pseudo-backgroundcolor", colors[timelineEvent.category]);
+
+
     var popupSpan = document.createElement("span");
     popupSpan.setAttribute("class", "popuptext");
     popupSpan.setAttribute("id", "myPopup");  
@@ -47,8 +53,6 @@ function addTimelineEvent(timelineEvent)
     
     elem.style.left = getPixelFromDate(timelineEvent.startingDate)  + "px";
     elem.style.width = getPixelFromDate(timelineEvent.endingDate) - getPixelFromDate(timelineEvent.startingDate)  + "px";
-    console.log(elem.style.left);
-    console.log(elem.style.width);
     elem.style.top = timelineEvent.yLocation + "px";
     
     elem.appendChild(popupSpan);
