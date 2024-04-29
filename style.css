@@ -13,10 +13,9 @@
   margin-top: -3px;
   text-wrap: nowrap;
   white-space: nowrap;
-
 }
 
-#rcorners1:before, #rcorners1:after {
+#rcorners1:before{
   background: var(--pseudo-backgroundcolor);
   content: '';
   height: 15px;
@@ -30,11 +29,12 @@
   /*border: 2px solid black;*/
   white-space: nowrap;
 }
-
+/*
 #rcorners1:after {
   float: right;
   display: inline-block;
 }
+*/
 
 .p1
 {
