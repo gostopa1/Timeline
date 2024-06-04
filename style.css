@@ -3,7 +3,7 @@
   --pseudo-backgroundcolor:  #73AD21;
   }
 
-#rcorners1 {
+#rcorners {
   border-radius: 25px;
   background: #73AD21;
   padding: -2px; 
@@ -15,7 +15,7 @@
   white-space: nowrap;
 }
 
-#rcorners1:before{
+#rcorners:before, #rcorners:after{
   background: var(--pseudo-backgroundcolor);
   content: '';
   height: 15px;
@@ -27,46 +27,14 @@
   border-color: var(--pseudo-backgroundcolor);
   margin-top: -5px;
   /*border: 2px solid black;*/
-  white-space: nowrap;
+  white-space: nowrap;*/
 }
-/*
-#rcorners1:after {
+
+#rcorners:after {
   float: right;
   display: inline-block;
 }
-*/
 
-.p1
-{
-  font-family: monospace;
-}
-.p2
-{
-  font-family: monospace;
-  border-radius: 25px;
-  background: #73AD21;
-  border: 2px solid #73AD21;
-  padding: 20px; 
-  width: 200px;
-  height: 50px;  
-}
-#rcorners2 {
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 20px; 
-  width: 200px;
-  height: 50px;  
-}
-
-#rcorners3 {
-  border-radius: 25px;
-  background: url(paper.gif);
-  background-position: left top;
-  background-repeat: repeat;
-  padding: 20px; 
-  width: 200px;
-  height: 50px;  
-}
 
 body {background-color: rgb(0, 0, 0);color: white;}
 

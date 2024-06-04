@@ -35,10 +35,11 @@ function addTimelineEvent(timelineEvent)
     var text = "Placeholder Text"
     var elem = document.createElement("div");
     
-    elem.setAttribute("id", "rcorners1");
+    elem.setAttribute("id", "rcorners");
     elem.setAttribute("class", "popup");
     elem.style.backgroundColor = colors[timelineEvent.category];
     elem.style.setProperty("--pseudo-backgroundcolor", colors[timelineEvent.category]);
+    elem.onwheel = zoom;
 
 
     var popupSpan = document.createElement("span");
@@ -78,3 +79,19 @@ myElements.forEach(
     )
 })
 
+
+
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(0.125, scale), 4);
+  
+    event.style.width = getPixelFromDate(timelineEvent.endingDate) - getPixelFromDate(timelineEvent.startingDate)  + "px";
+
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
