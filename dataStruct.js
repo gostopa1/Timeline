@@ -14,7 +14,7 @@ var TimelineEvent = {
       newTimelineEvent.text = eventText;
       newTimelineEvent.popupText = eventPopuptext;
       newTimelineEvent.category = eventCategory;
-      newTimelineEvent.yLocation = eventYLocation*50+500;
+      newTimelineEvent.yLocation = eventYLocation*50;
       return newTimelineEvent;
     },
     'setYLocation': function (newYLocation)
