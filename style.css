@@ -6,33 +6,15 @@
 #rcorners {
   border-radius: 25px;
   background: #73AD21;
-  padding: -2px; 
+  padding: 1px; 
   width: 200px;
-  height: 5px;
+  height: 20px;
   font-family: monospace;
   margin-top: -3px;
+  text-align: left;
+  text-shadow:rgb(0, 0, 0);
   text-wrap: nowrap;
   white-space: nowrap;
-}
-
-#rcorners:before, #rcorners:after{
-  background: var(--pseudo-backgroundcolor);
-  content: '';
-  height: 15px;
-  width: 15px;
-  
-  float: left;
-  
-  border-radius: 20px;
-  border-color: var(--pseudo-backgroundcolor);
-  margin-top: -5px;
-  /*border: 2px solid black;*/
-  white-space: nowrap;*/
-}
-
-#rcorners:after {
-  float: right;
-  display: inline-block;
 }
 
 
