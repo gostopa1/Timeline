@@ -53,8 +53,17 @@ function addTimelineEvent(timelineEvent)
     //elem.style.width = timelineEvent.endingDate - timelineEvent.startingDate  + "px";
     
     elem.style.left = getPixelFromDate(timelineEvent.startingDate)  + "px";
-    elem.style.width = getPixelFromDate(timelineEvent.endingDate) - getPixelFromDate(timelineEvent.startingDate)  + "px";
-    elem.style.top = timelineEvent.yLocation + "px";
+    //console.log(timelineEvent.endingDate)
+    if (timelineEvent.endingDate=="")
+    {
+        elem.style.width = 20  + "px";
+    }
+    else
+    {
+        elem.style.width = getPixelFromDate(timelineEvent.endingDate) - getPixelFromDate(timelineEvent.startingDate)  + "px";
+    }
+    
+    elem.style.top = timelineEvent.yLocation + 100 + "px" ;
     
     elem.appendChild(popupSpan);
 
