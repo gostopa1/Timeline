@@ -4,4 +4,5 @@ Starting Date,Ending Date,Importance,Line,Category,Title,Description
 2015-01-01,2015-12-31,1,0,Education,Another not so important degree on the same line, You can choose what line you show each event
 2017-01-01,2021-12-31,8,0,Work,Software Over-engineer, Make-things-terrible
 2018-01-01,2021-12-31,4,1,Work,Click to see more info, You can use the pop-up windows to show more info. You can also add hyperlinks
-2017-01-01,,8,3,Work,Momentary event, "Some items do not even have duration. Why have an end-date. Right?"
+2017-01-01,,8,3,Work,Momentary event, Some items do not even have duration. Why have an end-date. Right?
+2020-01-01,today,3,4,Work,I still work there, If the end-date is set to "today" the line will always extend until the current day
