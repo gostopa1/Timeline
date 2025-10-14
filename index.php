@@ -82,10 +82,10 @@
     }
     #popup {
         position: fixed;
-        top: 30%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -30%);
-        background: #222;
+        background: #aaa;
         padding: 20px;
         border: 1px solid #555;
         border-radius: 10px;
@@ -98,7 +98,7 @@
         float: right;
         cursor: pointer;
         font-weight: bold;
-        color: #aaa;
+        color: #000000ff;
     }
 </style>
 </head>
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             catDiv.appendChild(eventsWrapper);
 
             const events = categories[cat].sort((a,b)=> new Date(a['Starting Date'])-new Date(b['Starting Date']));
-            const layers = [];
+            var max_layer=0; // To store the maximum line number on each category
 
             events.forEach(e => {
                 const start = new Date(e['Starting Date']);
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const startOffset = (start - minDate)/(1000*3600*24) * pixelsPerDay;
 
                 let layer = e['Line'];
-
+                max_layer = max_layer < layer ? layer : max_layer;
                 const eDiv = document.createElement('div');
                 eDiv.className = 'event';
                 eDiv.style.left = (startOffset + 150) + 'px';
@@ -233,18 +233,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     eventsWrapper.style.display = 'none';
                 }
             });
-            const category_offset = 40;
-            offset_from_top += (layers.length*50) + category_offset;
+            const category_offset = 0;
+            offset_from_top += (max_layer*50) + category_offset;
+            eventsWrapper.style.height = offset_from_top;
             cat_ind+=1;
         }
-        container.style.height = offset_from_top + 'px';
+        //container.style.height = offset_from_top + 100 + 'px';
     }
 
     function drawAxis() {
         timeAxis.innerHTML = '';
         timeAxis.style.width = (totalDays * pixelsPerDay + 300) + 'px';
 
-        for (let y=2005; y<=2035; y+=1) 
+        for (let y=2005; y<=2030; y+=1) 
             { 
             const date = new Date(y,0);
             d = Math.ceil((date - minDate) / (1000 * 3600 * 24));   
