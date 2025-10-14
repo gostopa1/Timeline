@@ -8,7 +8,7 @@
         margin: 0;
         background: #121212;
         color: #f0f0f0;
-        font-family: 'Segoe UI', sans-serif;
+        font-family: monospace;
         overflow: hidden;
     }
     #wrapper {
@@ -143,7 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let allDates = [];
         data.forEach(e => {
             allDates.push(new Date(e['Starting Date']));
-            if (e['Ending Date']) allDates.push(new Date(e['Ending Date']));
+            if (e['Ending Date']){
+                if (e['Ending Date']=="today") allDates.push(new Date(Date.now()));
+                else allDates.push(new Date(e['Ending Date']));
+            }
         });
         minDate = new Date(Math.min(...allDates));
         minDate.setDate(minDate.getDate()+365*1.5); // Add one 1.5 year to offset
@@ -155,12 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function buildTimeline(categories) {
         container.innerHTML = '';
-        let y = 80;
+        let offset_from_top = 80;
         let cat_ind = 0;
         for (let cat in categories) {
             const catDiv = document.createElement('div');
             catDiv.className = 'category';
-            catDiv.style.top = y + 'px';
+            catDiv.style.top = offset_from_top + 'px';
             container.appendChild(catDiv);
 
             const title = document.createElement('div');
@@ -177,7 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             events.forEach(e => {
                 const start = new Date(e['Starting Date']);
-                const end = e['Ending Date'] ? new Date(e['Ending Date']) : null;
+
+                if (e['Ending Date']=="today") var end = new Date(Date.now());
+                else var end = e['Ending Date'] ? new Date(e['Ending Date']) : null;
+
                 const startOffset = (start - minDate)/(1000*3600*24) * pixelsPerDay;
 
                 let layer = e['Line'];
@@ -228,10 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             const category_offset = 40;
-            y += (layers.length*50) + category_offset;
+            offset_from_top += (layers.length*50) + category_offset;
             cat_ind+=1;
         }
-        container.style.height = y + 'px';
+        container.style.height = offset_from_top + 'px';
     }
 
     function drawAxis() {
