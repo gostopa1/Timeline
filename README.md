@@ -16,4 +16,7 @@ Check the [demo](https://gotsopoulos.com/Timeline/demo/).
 - [ ] Fix/adfjust the distances between sections?
 - [ ] Write dates in European format in the popup?  
 - [ ] Adjust width to screen size  
-- [ ] Allow today as an option on end date and stretch line till the end of the timeline
+- [ ] Change CSV delimiter to allow also use of commas
+- [x] Change font to monospace
+- [x] Allow today as an option on end date and stretch line till the end of the timeline
+- [] Make popup appear lower or maybe under the line?
