@@ -207,6 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const title = document.createElement('span');
                 title.className = 'title';
+                //Adjust font size based on importance
+                title.style.fontSize = parseInt(e.Importance) + 12 + 'px';
                 title.textContent = e.Title;
                 eDiv.appendChild(title);
 
