@@ -115,14 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             title.addEventListener('click', () => {
+                catTitle = catDiv.querySelector(".category-title");
                 eventsWrapper.classList.toggle('collapsed');
                 if (eventsWrapper.classList.contains('collapsed'))
                     {
                         eventsWrapper.style.display= 'none';
+                        catTitle.textContent = catTitle.textContent + ' >';
                     }
                 else
                     {
                         eventsWrapper.style.display= 'block';
+                        catTitle.textContent = catTitle.textContent.substring(0,catTitle.textContent.length-2);
                     }
                 catDiv.classList.toggle('collapsed');
                 let cnt=0;
@@ -179,7 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openPopup(event) {
         document.getElementById('popup-title').textContent = event.Title;
-        let timeText = event['Ending Date'] ? `From ${event['Starting Date']} to ${event['Ending Date']}` : `On ${event['Starting Date']}`;
+        let start = new Date(event['Starting Date']);
+        let end = new Date(event['Ending Date']);
+        let timeText = event['Ending Date'] ? `From ${start.toLocaleDateString('en-GB')} to ${end.toLocaleDateString('en-GB')}` : `On ${start.toLocaleDateString('en-GB')}`;
         document.getElementById('popup-time').textContent = timeText;
         document.getElementById('popup-desc').innerHTML = event.Description;
         document.getElementById('popup').style.display = 'block';

@@ -28,17 +28,17 @@ The first row of the PHP gives away the data that each event requires:
 - [x] Control text size based on importance as well  
 - [x] Set color for each category?  
 - [x] Make sure texts do not overlap  
-- [x] Manipulate dot size based on importance  
-category
+- [x] Manipulate dot size based on importance category
 - [x] Change font to monospace
 - [x] Allow today as an option on end date and stretch line till the end of the timeline
 - [x] Make popup appear lower or maybe under the line? Now showing more in the center
 - [x] Adjust popup background color to properly show dark blue links
-- [ ] Write dates in European format in the popup?  
-- [ ] Adjust width to screen size  
 - [x] Change CSV delimiter to allow also use of commas
 - [x] Clicking on a category title contracts and expands the section
 - [x] Reduce space between sections when contracting
-- [ ] Adjust colours per category (add more colors to the list) and apply also to momentary events
-- [ ] Add indication whether a section is expanded or not.
+- [x] Adjust colours per category (add more colors to the list) and apply also to momentary events
+- [x] Add indication whether a section is expanded or not.
 - [x] Remove white border from momentary events 
+- [X] Write dates in European format in the popup?  
+- [ ] Adjust width to screen size  
+- [ ] Semi-Bug: When scrolled down and collapsing a section the positions are changing
