@@ -47,6 +47,7 @@
         height: 16px;
         border-radius: 50%;
         background-color: #e91e63;
+        align-self: middle;
     }
     .title {
         position: absolute;

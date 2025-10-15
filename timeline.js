@@ -1,8 +1,14 @@
 
-let pixelsPerDay = 0.2;
+var screen_width = window.screen.width;
+let minYear = 2005;
+let minYearDate = new Date(minYear,0);
+let maxYear = 2029;
+let maxYearDate = new Date(maxYear,0);
+let totalNumberOfDays=((maxYearDate-minYearDate)/(1000*3600*24));
+let pixelsPerDay = screen_width/totalNumberOfDays; // close to 0.2
 let minDate, maxDate, totalDays;
 
-let categoryColours=['#f00','#00f','#0f0','#3ff','#4f4','#f3f']
+let categoryColours=['#00f','#f00','#0f0','#3ff','#4f4','#f3f']
 
 var is_collapsed=[];
 var max_layers=[];
