@@ -6,6 +6,7 @@ let categoryColours=['#f00','#00f','#0f0','#3ff','#4f4']
 
 var is_collapsed=[];
 var max_layers=[];
+const const_offset=50;
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('timeline-container');
     const timeAxis = document.getElementById('time-axis');
@@ -131,12 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (elem.classList.contains('collapsed'))
                         temp_offset+=0; // i.e. do nothing
                     else
-                        temp_offset+=(max_layers[cnt]*50);
+                        temp_offset+=(max_layers[cnt]*50)+const_offset;
 
                     cnt+=1;
                 });
             });
-            offset_from_top += (max_layer*50);
+            offset_from_top += (max_layer*50)+const_offset;
             max_layers[cat_ind]=max_layer;
 
             cat_ind+=1;

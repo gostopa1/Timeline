@@ -24,7 +24,7 @@
     }
     .category {
         position: relative;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         top: 0px;
         height: 0px;
     }
