@@ -18,9 +18,8 @@ category
 - [x] Allow today as an option on end date and stretch line till the end of the timeline
 - [x] Make popup appear lower or maybe under the line? Now showing more in the center
 - [x] Adjust popup background color to properly show dark blue links
-- [ ] Fix/adfjust the distances between sections?
 - [ ] Write dates in European format in the popup?  
 - [ ] Adjust width to screen size  
-- [ ] Change CSV delimiter to allow also use of commas
+- [x] Change CSV delimiter to allow also use of commas
 - [x] Clicking on a category title contracts and expands the section
-- [ ] Reduce space between sections when contracting
+- [x] Reduce space between sections when contracting
