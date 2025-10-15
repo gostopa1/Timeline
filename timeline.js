@@ -2,7 +2,7 @@
 let pixelsPerDay = 0.2;
 let minDate, maxDate, totalDays;
 
-let categoryColours=['#f00','#00f','#0f0','#3ff','#4f4']
+let categoryColours=['#f00','#00f','#0f0','#3ff','#4f4','#f3f']
 
 var is_collapsed=[];
 var max_layers=[];
