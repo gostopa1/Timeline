@@ -42,3 +42,4 @@ The first row of the PHP gives away the data that each event requires:
 - [X] Write dates in European format in the popup?  
 - [ ] Adjust width to screen size  
 - [ ] Semi-Bug: When scrolled down and collapsing a section the positions are changing
+- [ ] Generalize date ranges, to show hours for example for a different use (e.g. a conference schedule)
